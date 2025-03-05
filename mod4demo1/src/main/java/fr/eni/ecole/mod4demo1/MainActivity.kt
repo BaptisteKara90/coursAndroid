@@ -9,7 +9,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import fr.eni.ecole.mod4demo1.ui.theme.CoursAndroidTheme
@@ -31,7 +36,28 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Form(modifier : Modifier = Modifier){
+
+    var firstname : String = ""
+    var lastname by remember { mutableStateOf("") }
+
     Column(modifier = modifier){
+        TextField(
+            label = {
+                Text(text = "Prénom ?")
+            },
+            value = firstname,
+            onValueChange = {
+            firstname = it
+        })
+
+        TextField(
+            label = {
+                Text(text = "Nom ?")
+            },
+            value = lastname,
+            onValueChange = {
+                lastname = it
+            })
 
     }
 }
