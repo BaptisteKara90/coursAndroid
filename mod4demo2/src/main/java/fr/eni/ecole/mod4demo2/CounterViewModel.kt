@@ -9,7 +9,7 @@ class CounterViewModel : ViewModel() {
 
     private val _counter = MutableStateFlow<Int>(0)
     // 2 façon de faire : StateFlow<Int> || _counter.asStateFlow()
-//    val counter : StateFlow<Int> = _counter
+    // val counter : StateFlow<Int> = _counter
     val counter = _counter.asStateFlow()
 
     var nbPlus = 0;
