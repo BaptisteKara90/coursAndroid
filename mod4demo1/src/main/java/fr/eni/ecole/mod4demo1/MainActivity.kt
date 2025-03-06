@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,20 +36,24 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun Form(modifier : Modifier = Modifier){
+fun Form(modifier: Modifier = Modifier) {
 
-    var firstname : String = ""
+    // remember : Save the state until you rotate the device
     var lastname by remember { mutableStateOf("") }
 
-    Column(modifier = modifier){
+    // rememberSaveable save the state even you rotate the device
+    var firstname by rememberSaveable { mutableStateOf("") }
+    var age by rememberSaveable { mutableStateOf("") }
+
+    Column(modifier = modifier) {
         TextField(
             label = {
                 Text(text = "Prénom ?")
             },
             value = firstname,
             onValueChange = {
-            firstname = it
-        })
+                firstname = it
+            })
 
         TextField(
             label = {
@@ -58,6 +63,14 @@ fun Form(modifier : Modifier = Modifier){
             onValueChange = {
                 lastname = it
             })
-
+        TextField(
+            label = {
+                Text(text = "Age ?")
+            },
+            value = age,
+            onValueChange = {
+                age = it
+            })
     }
 }
+
