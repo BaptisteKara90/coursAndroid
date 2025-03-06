@@ -23,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import fr.eni.ecole.mod4demo2.ui.theme.CoursAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -53,7 +54,7 @@ fun Counter(
     Row(
         horizontalArrangement = Arrangement.SpaceEvenly,
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth().padding(top= 50.dp)
     ) {
         IconButton(onClick = { viewModel.decrementCounter() }) {
             Icon(imageVector = Icons.Default.KeyboardArrowDown, contentDescription = null )
