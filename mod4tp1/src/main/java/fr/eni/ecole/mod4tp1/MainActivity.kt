@@ -58,7 +58,7 @@ fun DiceGameScreen(
 
 
     Column(
-        modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+        modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
 
@@ -67,8 +67,8 @@ fun DiceGameScreen(
         Text(text = viewModel.nbThrowsAll.toString())
         Row(modifier= Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceAround) {
-            Text(text = "Total =  ${counterLeft}  /  ${viewModel.nbThrowsLeft.toString()}  Lancé(s)")
-            Text(text = "Total = ${counterRight} / ${viewModel.nbThrowsRight.toString()} Lancé(s)")
+            Text(text = "Total =  ${counterLeft}  /  ${viewModel.nbThrowsLeft}  Lancé(s)")
+            Text(text = "Total = ${counterRight} / ${viewModel.nbThrowsRight} Lancé(s)")
         }
         Row(
             modifier= Modifier.fillMaxWidth(),
@@ -96,7 +96,7 @@ fun DiceGameScreen(
             }
         }
         Button(onClick = { viewModel.reset() }) {
-            Text(text = "Reset")
+            Text(text = "Recommencer")
         }
     }
 
