@@ -86,7 +86,7 @@ fun Call(
                     }
 
             } else {
-                Intent(Intent.ACTION_CALL, Uri.parse("tel:066666666666"))
+                Intent(Intent.ACTION_DIAL, Uri.parse("tel:066666666666"))
                     .also {
                         context.startActivity(it)
                     }
@@ -100,7 +100,7 @@ fun Call(
         Button(onClick = {
             requestPermission.launch(android.Manifest.permission.CALL_PHONE)
         }) {
-            Text(text = "NightCall")
+            Text(text = "Call me maybe :)")
         }
     }
 }
