@@ -87,7 +87,7 @@ fun Password(modifier: Modifier = Modifier) {
                 "Show password"
             }
 
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = { passwordVisible = !passwordVisible }) {
                 Icon(imageVector = image, description)
             }
         }
