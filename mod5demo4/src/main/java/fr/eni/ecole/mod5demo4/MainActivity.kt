@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Homepage(modifier: Modifier = Modifier, LoginValue: String) {
-    Text(modifier = modifier.padding(16.dp), text = "Hello $LoginValue, you stupid biatch!")
+    Text(modifier = modifier.padding(16.dp), text = "Hello $LoginValue")
 }
 
 @Composable
