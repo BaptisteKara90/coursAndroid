@@ -4,9 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import fr.eni.ecole.mod6demo3.bo.Music
+import fr.eni.ecole.mod6demo3.dao.MusicDao
 
-@Database(entities = [], version = 1)
+@Database(entities = [Music::class], version = 1)
 abstract class AppDataBase : RoomDatabase() {
+
+    abstract fun musicDao(): MusicDao
 
     companion object {
         private var INSTANCE: AppDataBase? = null
